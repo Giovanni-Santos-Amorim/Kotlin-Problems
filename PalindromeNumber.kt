@@ -34,24 +34,16 @@ https://leetcode.com/problems/palindrome-number/
 class Solution {
     fun isPalindrome(x: Int): Boolean {
         var divisibleX = x
-        var reversedInteger = 0
         var reminder: Int
+        var y = 0
 
         while(divisibleX != 0)
         {
             reminder = divisibleX % 10
-            reversedInteger = reversedInteger * 10 + reminder
+            y = y * 10 + reminder
             divisibleX /= 10
         }
 
-        if(reversedInteger == x && x >= 0)
-        {
-            return true
-        }
-
-        else
-        {
-            return false
-        }
+        return x == y && x >= 0
     }
 }
